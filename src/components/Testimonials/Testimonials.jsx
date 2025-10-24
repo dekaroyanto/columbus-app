@@ -6,25 +6,21 @@ const TestimonialData = [
     id: 1,
     name: "Rina Andriyani",
     text: "Pelayanannya ramah banget! Saya beli kulkas di Columbus secara kredit, prosesnya cepat dan barang langsung dikirim ke rumah. Recommended banget buat yang cari elektronik berkualitas.",
-    img: "https://picsum.photos/101/101",
   },
   {
     id: 2,
     name: "Ahmad Fauzi",
     text: "Saya sudah beberapa kali beli barang di Columbus, mulai dari TV sampai sofa. Harganya bersaing, barangnya bagus, dan bisa dicicil tanpa ribet. Terpercaya pokoknya!",
-    img: "https://picsum.photos/104/104",
   },
   {
     id: 3,
     name: "Siti Marlina",
     text: "Awalnya ragu beli secara kredit, tapi setelah coba di Columbus ternyata gampang banget. Adminnya responsif dan pengantaran cepat. Sekarang rumah jadi makin nyaman.",
-    img: "https://picsum.photos/103/103",
   },
   {
     id: 4,
     name: "Budi Santoso",
     text: "Saya beli mesin cuci di Columbus dan kualitasnya oke. Selain itu, mereka sering ada promo menarik. Sangat membantu untuk kebutuhan rumah tangga.",
-    img: "https://picsum.photos/104/104",
   },
 ];
 
@@ -67,6 +63,13 @@ const Testimonials = () => {
     ],
   };
 
+  // Fungsi untuk ambil inisial dari nama
+  const getInitials = (name) => {
+    const words = name.split(" ");
+    if (words.length === 1) return words[0][0].toUpperCase();
+    return (words[0][0] + words[1][0]).toUpperCase();
+  };
+
   return (
     <div className="py-10 mb-10 dark:bg-gray-900 dark:text-white duration-300">
       <div className="container">
@@ -94,11 +97,9 @@ const Testimonials = () => {
               <div className="my-6" key={data.id}>
                 <div className="flex flex-col gap-4 shadow-lg py-8 px-6 mx-4 rounded-xl dark:bg-gray-800 bg-yellow-200 relative">
                   <div className="mb-4 flex justify-center">
-                    <img
-                      src={data.img}
-                      alt={data.name}
-                      className="rounded-full w-20 h-20 object-cover"
-                    />
+                    <div className="w-20 h-20 rounded-full bg-yellow-500 flex items-center justify-center text-white text-2xl font-bold shadow-md">
+                      {getInitials(data.name)}
+                    </div>
                   </div>
                   <div className="flex flex-col items-center gap-4">
                     <div className="space-y-3 text-center">
