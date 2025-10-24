@@ -29,7 +29,7 @@ const ImageList = [
 ];
 
 const Hero = () => {
-  const phoneNumber = "085156930246";
+  const phoneNumber = "625156930246";
   const message = "Halo, ada promo apa aja nih?";
   const encodedMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;

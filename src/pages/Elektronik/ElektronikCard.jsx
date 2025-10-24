@@ -1,7 +1,7 @@
 import React from "react";
 
 const ElektronikCard = ({ product }) => {
-  const phoneNumber = "085156930246";
+  const phoneNumber = "625156930246";
 
   const handleProductClick = () => {
     const message = `Halo, mau tanya tentang ${product.name} dong`;
